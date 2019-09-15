@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="root" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MinecraftBlocksManagementController">
+   <bottom>
+      <GridPane prefHeight="196.0" prefWidth="1920.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pagination fx:id="pagination" maxPageIndicatorCount="1" pageCount="1" prefHeight="500.0" prefWidth="30.0" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets top="25.0" />
+               </GridPane.margin></Pagination>
+            <Button mnemonicParsing="false" onAction="#createNewQuickAccesBar" prefHeight="86.0" prefWidth="298.0" text="Add Quick Acces Bar" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="-15.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <GridPane fx:id="quickaccessbar" GridPane.columnIndex="1" GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <GridPane.margin>
+                  <Insets right="-200.0" top="-25.0" />
+               </GridPane.margin>
+            </GridPane>
+         </children>
+      </GridPane>
+   </bottom>
+   <top>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fitHeight="129.0" fitWidth="156.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@imgs/inventory.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="50.0" top="115.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="116.0" fitWidth="487.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@imgs/logo.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="-50.0" top="50.0" />
+               </GridPane.margin>
+            </ImageView>
+            <Button mnemonicParsing="false" onAction="#addBlocksToInventory" text="Add Blocks To Inventory" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="-50.0" />
+               </GridPane.margin>
+            </Button>
+            <MenuButton mnemonicParsing="false" prefHeight="25.0" prefWidth="255.0" styleClass="menuitem" stylesheets="@css/label.css" text="Choose the block to pass to quickaccess" GridPane.columnIndex="1" GridPane.rowIndex="5">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#passGrassBlockToQuickAccess" text="GrassBlockToQuickAccess" />
+                <MenuItem mnemonicParsing="false" onAction="#passDiamondBlockToQuickAccess" text="DiamondBlockToQuickAccess" />
+                  <MenuItem mnemonicParsing="false" onAction="#passStoneBlockToQuickAccess" text="StoneBlockToQuickAccess" />
+                  <MenuItem mnemonicParsing="false" onAction="#passWoodenBlockToQuickAccess" text="WoodenBlockToQuickAccess" />
+                  <MenuItem mnemonicParsing="false" onAction="#passSandBlockToQuickAccess" text="SandBlockToQuickAccess" />
+                  <MenuItem mnemonicParsing="false" onAction="#passGoldBlockToQuickAccess" text="GoldBlockToQuickAccess" />
+                  <MenuItem mnemonicParsing="false" onAction="#passGlowStoneBlockToQuickAccess" text="GlowStoneBlockToQuickAccess" />
+                  <MenuItem mnemonicParsing="false" onAction="#passCoralBlockToQuickAccess" text="CoralBlockToQuickAccess" />
+              </items>
+               <GridPane.margin>
+                  <Insets bottom="15.0" left="175.0" right="-50.0" />
+               </GridPane.margin>
+            </MenuButton>
+            <ImageView fitHeight="152.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="210.0" top="55.0" />
+               </GridPane.margin>
+               <image>
+                  <Image url="@imgs/player.png" />
+               </image>
+            </ImageView>
+            <Label text="Manage your inventory" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="65.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Consolas" size="30.0" />
+               </font>
+            </Label>
+            <Label text="1- Enter the amount of blocks that you want" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="65.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="2- Choose if you want to add a new quick acces bar" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="65.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label text="or choose if you want to add them to your inventory" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="65.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+   </top>
+   <right>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fitHeight="86.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@imgs/grassblock.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets top="50.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="86.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@imgs/diamondblock.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets top="50.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="90.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@imgs/stoneblock.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets top="50.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="92.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@imgs/woodenblock.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets top="50.0" />
+               </GridPane.margin>
+            </ImageView>
+            <TextField fx:id="grassBlockAmount">
+               <GridPane.margin>
+                  <Insets left="25.0" right="25.0" top="50.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="diamondBlockAmount" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="25.0" right="25.0" top="50.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="stoneBlockAmount" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="25.0" right="25.0" top="50.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="woodenBlockAmount" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="25.0" right="25.0" top="50.0" />
+               </GridPane.margin>
+            </TextField>
+            <ImageView fitHeight="90.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+               <image>
+                  <Image url="@imgs/sandblock.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="-5.0" top="50.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="94.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@imgs/goldblock.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="-5.0" top="50.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="88.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@imgs/glowstone.png" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="-5.0" top="50.0" />
+               </GridPane.margin>
+            </ImageView>
+            <ImageView fitHeight="90.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <image>
+                  <Image url="@imgs/coralblock.gif" />
+               </image>
+               <GridPane.margin>
+                  <Insets left="-5.0" top="50.0" />
+               </GridPane.margin>
+            </ImageView>
+            <TextField fx:id="sandBlockAmount" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets left="25.0" right="25.0" top="50.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="goldBlockAmount" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="25.0" right="25.0" top="50.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="glowStoneBlockAmount" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="25.0" right="25.0" top="50.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="coralBlockAmount" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="25.0" right="25.0" top="50.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="25.0" top="25.0" />
+         </padding>
+      </GridPane>
+   </right>
+   <stylesheets>
+      <URL value="@css/background.css" />
+      <URL value="@css/label.css" />
+   </stylesheets>
+   <center>
+      <GridPane fx:id="inventorybox" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <padding>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </padding>
+      </GridPane>
+   </center>
+</BorderPane>
