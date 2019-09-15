@@ -1,0 +1,12 @@
+.label{
+	-fx-text-fill: black;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+.button{
+	-fx-background-color : SLATEGRAY;
+	-fx-text-fill: black;
+}
+.menuitem{
+	-fx-background-color : SLATEGRAY;
+	-fx-text-fill: black;
+}

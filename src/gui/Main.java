@@ -20,6 +20,11 @@
 		
 //----------------------------------------------------METHODS FOR THIS CLASS---------------------------------------------------------------
 		@Override
+		/**
+		 * This method starts the application for this project by launching its found FXML file.
+		 * @param stage the current stage presented for this program in the system
+		 * @throws exception in the case that the fxml file with the gui can't be found.
+		 */
 		public void start(Stage stage) throws Exception{
 			
 			Parent root = FXMLLoader.load(getClass().getResource("minecraftblocksmanagement.fxml"));
@@ -34,7 +39,10 @@
 			
 		}
 	//-------------------------------------------------------------------------------------------------------------------------------------
-		
+		/**
+		 * This method allows the launching of the start method by linking all modeling classes with its respective gui
+		 * @param args
+		 */
 		public static void main (String args[]) {
 			launch(args);
 		}

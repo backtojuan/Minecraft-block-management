@@ -13,6 +13,7 @@
 	import javafx.scene.image.Image;
 	import javafx.scene.image.ImageView;
 	import javafx.scene.control.Label;
+	import java.util.Stack;
 	import model.*;
 	import datastructures.*;
 //-----------------------------------------------------------------------------------------------------------------------------------------	
@@ -71,20 +72,20 @@
 	    private Game game;
 //----------------------------------------------------METHODS FOR THIS CLASS----------------------------------------------------------------    
 	    @FXML
+	    /**
+	     * This method initializes the respective needed elements before the GUI is launched, once its launched is sure
+	     * all nodes, controls and elements from model are waiting to be called
+	     */
 	    public void initialize() {
 	    	game = new Game();
-	    
-	    	for(int i=0;i<1;i++) {
-	    		for(int j=0;j<7;j++) {
-	    			ImageView block = new ImageView(GRASS);
-	    			block.setFitHeight(50);
-	    			block.setFitWidth(75);
-	    			quickaccessbar.add(block, j, i);
-	    		}
-	    	}
+
 	    }
 	//--------------------------------------------------------------------------------------------------------------------------------------
 	    @FXML
+	    /**
+	     * This method creates a new quickaccess bar requested by the user
+	     * @param event the vent triggered by the user
+	     */
 	    private void createNewQuickAccesBar(ActionEvent event) {
 	    	//proves if the values are valid
 	    	try {
@@ -96,76 +97,132 @@
 	    			throw new InvalidInformationException("",0);
 	    		}
 	    		else {
+	    			
+	    	//GRASS BLOCKS--------------------------------------------------------------------------------------------------
 	    			if(!grassBlockAmount.getText().equals("")) {
 	    				int grassblocks = Integer.parseInt(grassBlockAmount.getText());
 	    				if(grassblocks>64 || grassblocks<0) {
 	    					throw new InvalidInformationException("numero", grassblocks);
 	    				}
 	    				else {
-	    					
+	    					Stack<Stack<Block>> gs = new Stack<Stack<Block>>();
+	    					game.addAccess(gs);
+	    					for(int i=0;i<grassblocks;i++) {
+	    						game.addElement(new Block(Block.GRASS));
+	    					}
+	    						insertBlockToQuickAcces(GRASS, grassblocks);	
 	    				}
 	    			}
+	    	
+	    	//STONE BLOCKS--------------------------------------------------------------------------------------------------
 	    			else if(!stoneBlockAmount.getText().equals("")) {
 	    				int stoneblocks = Integer.parseInt(stoneBlockAmount.getText());
 	    				if(stoneblocks>64 || stoneblocks<0) {
 	    					throw new InvalidInformationException("numero", stoneblocks);
 	    				}
 	    				else {
-	    					
+	    					Stack<Stack<Block>> gs = new Stack<Stack<Block>>();
+	    					game.addAccess(gs);
+	    					for(int i=0;i<stoneblocks;i++) {
+	    						game.addElement(new Block(Block.STONE));
+	    					}
+	    						insertBlockToQuickAcces(STONE, stoneblocks);	
 	    				}
 	    			}
+	    			
+	    	//DIAMOND BLOCKS--------------------------------------------------------------------------------------------------
 	    			else if(!diamondBlockAmount.getText().equals("")) {
 	    				int diamondblocks = Integer.parseInt(diamondBlockAmount.getText());
 	    				if(diamondblocks>64 || diamondblocks<0) {
 	    					throw new InvalidInformationException("numero", diamondblocks);
 	    				}
 	    				else {
-	    					
+	    					Stack<Stack<Block>> gs = new Stack<Stack<Block>>();
+	    					game.addAccess(gs);
+	    					for(int i=0;i<diamondblocks;i++) {
+	    						game.addElement(new Block(Block.DIAMOND));
+	    					}
+	    						insertBlockToQuickAcces(DIAMOND, diamondblocks);	
 	    				}
 	    			}
+	    			
+	    	//WOODEN BLOCKS--------------------------------------------------------------------------------------------------
 	    			else if(!woodenBlockAmount.getText().equals("")) {
 	    				int woodenblocks = Integer.parseInt(woodenBlockAmount.getText());
 	    				if(woodenblocks>64 || woodenblocks<0) {
 	    					throw new InvalidInformationException("numero", woodenblocks);
 	    				}
 	    				else {
-	    					
+	    					Stack<Stack<Block>> gs = new Stack<Stack<Block>>();
+	    					game.addAccess(gs);
+	    					for(int i=0;i<woodenblocks;i++) {
+	    						game.addElement(new Block(Block.WOODEN));
+	    					}
+	    						insertBlockToQuickAcces(WOODEN, woodenblocks);	
 	    				}
 	    			}
+	    			
+	    	//SAND BLOCKS--------------------------------------------------------------------------------------------------
 	    			else if(!sandBlockAmount.getText().equals("")) {
 	    				int sandblocks = Integer.parseInt(sandBlockAmount.getText());
 	    				if(sandblocks>64 || sandblocks<0) {
 	    					throw new InvalidInformationException("numero", sandblocks);
 	    				}
 	    				else {
-	    					
+	    					Stack<Stack<Block>> gs = new Stack<Stack<Block>>();
+	    					game.addAccess(gs);
+	    					for(int i=0;i<sandblocks;i++) {
+	    						game.addElement(new Block(Block.SAND));
+	    					}
+	    						insertBlockToQuickAcces(SAND, sandblocks);	
 	    				}
 	    			}
+	    			
+	    	//GOLD BLOCKS--------------------------------------------------------------------------------------------------
 	    			else if(!goldBlockAmount.getText().equals("")) {
 	    				int goldblocks = Integer.parseInt(goldBlockAmount.getText());
 	    				if(goldblocks>64 || goldblocks<0) {
 	    					throw new InvalidInformationException("numero", goldblocks);
 	    				}
 	    				else {
-	    					
+	    					Stack<Stack<Block>> gs = new Stack<Stack<Block>>();
+	    					game.addAccess(gs);
+	    					for(int i=0;i<goldblocks;i++) {
+	    						game.addElement(new Block(Block.GOLD));
+	    					}
+	    						insertBlockToQuickAcces(GOLD, goldblocks);	
 	    				}
 	    			}
+	    			
+	    	//GLOWSTONE BLOCKS--------------------------------------------------------------------------------------------------
 	    			else if(!glowStoneBlockAmount.getText().equals("")) {
 	    				int glowstoneblocks = Integer.parseInt(glowStoneBlockAmount.getText());
 	    				if(glowstoneblocks>64 || glowstoneblocks<0) {
 	    					throw new InvalidInformationException("numero", glowstoneblocks);
 	    				}
 	    				else {
-	    					
+	    					Stack<Stack<Block>> gs = new Stack<Stack<Block>>();
+	    					game.addAccess(gs);
+	    					for(int i=0;i<glowstoneblocks;i++) {
+	    						game.addElement(new Block(Block.GLOWSTONE));
+	    					}
+	    						insertBlockToQuickAcces(GLOWSTONE, glowstoneblocks);	
 	    				}
 	    			}
+	    	
+	    	//CORAL BLOCKS--------------------------------------------------------------------------------------------------
 	    			else if(!coralBlockAmount.getText().equals("")) {
 	    				int coralblocks = Integer.parseInt(coralBlockAmount.getText());
 	    				if(coralblocks>64 || coralblocks<0) {
 	    					throw new InvalidInformationException("numero", coralblocks);
 	    				}
 	    				else {
-	    					
+	    					Stack<Stack<Block>> gs = new Stack<Stack<Block>>();
+	    					game.addAccess(gs);
+	    					for(int i=0;i<coralblocks;i++) {
+	    						game.addElement(new Block(Block.CORAL));
+	    					}
+	    						insertBlockToQuickAcces(CORAL, coralblocks);	
 	    				}
 	    			}
 	    		}
@@ -193,6 +250,10 @@
 	    }
 	//-------------------------------------------------------------------------------------------------------------------------------------------
 	    @FXML
+	    /**
+	     * This method adds blocks to the inventory of the user with a maximum of 64 blocks per empty space
+	     * @param event the event triggered by the user
+	     */
 	    private void addBlocksToInventory(ActionEvent event) {
 	    	//proves if the values are valid
 	    	try {
@@ -203,6 +264,8 @@
 	    			throw new InvalidInformationException("",0);
 	    		}
 	    		else {
+	    			
+	    	//GRASS BLOCKS--------------------------------------------------------------------------------------------------
 	    			if(!grassBlockAmount.getText().equals("")) {
 	    				int grassblocks = Integer.parseInt(grassBlockAmount.getText());
 	    				if(grassblocks>64 || grassblocks<0) {
@@ -221,12 +284,12 @@
 	    					}
 	    					else if(index>17 && index<=26) {
 	    						j = 2;
-	    					}
-	    							
-	    					insertBlockToInventory(GRASS, index,j);
-	    					
+	    					}		
+	    					insertBlockToInventory(GRASS, index,j,grassblocks);
 	    				}
 	    			}
+	    	
+	    	//STONE BLOCKS-----------------------------------------------------------------------------------------------
 	    			else if(!stoneBlockAmount.getText().equals("")) {
 	    				int stoneblocks = Integer.parseInt(stoneBlockAmount.getText());
 	    				if(stoneblocks>64 || stoneblocks<0) {
@@ -234,60 +297,157 @@
 	    				}
 	    				else {
 	    					
+	    					String key = Block.STONE;
+	    					Hblock<Integer,Block> value = new Hblock<Integer, Block>(stoneblocks,new Block(key));
+	    					game.addToInventory(key, value);
+	    					
+	    					int index = game.getInventory().hash1(key);
+	    					int j = 0;
+	    					if(index>8 && index<=17) {
+	    						j = 1;
+	    					}
+	    					else if(index>17 && index<=26) {
+	    						j = 2;
+	    					}		
+	    					insertBlockToInventory(STONE, index,j,stoneblocks);
 	    				}
 	    			}
+	    			
+	    	//DIAMOND BLOCKS-----------------------------------------------------------------------------------------------
 	    			else if(!diamondBlockAmount.getText().equals("")) {
 	    				int diamondblocks = Integer.parseInt(diamondBlockAmount.getText());
 	    				if(diamondblocks>64 || diamondblocks<0) {
 	    					throw new InvalidInformationException("numero", diamondblocks);
 	    				}
 	    				else {
+	    					String key = Block.DIAMOND;
+	    					Hblock<Integer,Block> value = new Hblock<Integer, Block>(diamondblocks,new Block(key));
+	    					game.addToInventory(key, value);
 	    					
+	    					int index = game.getInventory().hash1(key);
+	    					int j = 0;
+	    					if(index>8 && index<=17) {
+	    						j = 1;
+	    					}
+	    					else if(index>17 && index<=26) {
+	    						j = 2;
+	    					}		
+	    					insertBlockToInventory(DIAMOND, index,j,diamondblocks);
 	    				}
 	    			}
+	    			
+	    	//WOODEN BLOCKS------------------------------------------------------------------------------------------------
 	    			else if(!woodenBlockAmount.getText().equals("")) {
 	    				int woodenblocks = Integer.parseInt(woodenBlockAmount.getText());
 	    				if(woodenblocks>64 || woodenblocks<0) {
 	    					throw new InvalidInformationException("numero", woodenblocks);
 	    				}
 	    				else {
+	    					String key = Block.WOODEN;
+	    					Hblock<Integer,Block> value = new Hblock<Integer, Block>(woodenblocks,new Block(key));
+	    					game.addToInventory(key, value);
 	    					
+	    					int index = game.getInventory().hash1(key);
+	    					int j = 0;
+	    					if(index>8 && index<=17) {
+	    						j = 1;
+	    					}
+	    					else if(index>17 && index<=26) {
+	    						j = 2;
+	    					}		
+	    					insertBlockToInventory(WOODEN, index,j,woodenblocks);
 	    				}
 	    			}
+	    	
+	    	//SAND BLOCKS---------------------------------------------------------------------------------------------------
 	    			else if(!sandBlockAmount.getText().equals("")) {
 	    				int sandblocks = Integer.parseInt(sandBlockAmount.getText());
 	    				if(sandblocks>64 || sandblocks<0) {
 	    					throw new InvalidInformationException("numero", sandblocks);
 	    				}
 	    				else {
+	    					String key = Block.SAND;
+	    					Hblock<Integer,Block> value = new Hblock<Integer, Block>(sandblocks,new Block(key));
+	    					game.addToInventory(key, value);
 	    					
+	    					int index = game.getInventory().hash1(key);
+	    					int j = 0;
+	    					if(index>8 && index<=17) {
+	    						j = 1;
+	    					}
+	    					else if(index>17 && index<=26) {
+	    						j = 2;
+	    					}		
+	    					insertBlockToInventory(SAND, index,j,sandblocks);
 	    				}
 	    			}
+	    	
+	    	//GOLD BLOCKS---------------------------------------------------------------------------------------------------
 	    			else if(!goldBlockAmount.getText().equals("")) {
 	    				int goldblocks = Integer.parseInt(goldBlockAmount.getText());
 	    				if(goldblocks>64 || goldblocks<0) {
 	    					throw new InvalidInformationException("numero", goldblocks);
 	    				}
 	    				else {
+	    					String key = Block.GOLD;
+	    					Hblock<Integer,Block> value = new Hblock<Integer, Block>(goldblocks,new Block(key));
+	    					game.addToInventory(key, value);
 	    					
+	    					int index = game.getInventory().hash1(key);
+	    					int j = 0;
+	    					if(index>8 && index<=17) {
+	    						j = 1;
+	    					}
+	    					else if(index>17 && index<=26) {
+	    						j = 2;
+	    					}		
+	    					insertBlockToInventory(GOLD, index,j,goldblocks);
 	    				}
 	    			}
+	    			
+	    	//GLOWSTONE BLOCKS---------------------------------------------------------------------------------------------------
 	    			else if(!glowStoneBlockAmount.getText().equals("")) {
 	    				int glowstoneblocks = Integer.parseInt(glowStoneBlockAmount.getText());
 	    				if(glowstoneblocks>64 || glowstoneblocks<0) {
 	    					throw new InvalidInformationException("numero", glowstoneblocks);
 	    				}
 	    				else {
+	    					String key = Block.GLOWSTONE;
+	    					Hblock<Integer,Block> value = new Hblock<Integer, Block>(glowstoneblocks,new Block(key));
+	    					game.addToInventory(key, value);
 	    					
+	    					int index = game.getInventory().hash1(key);
+	    					int j = 0;
+	    					if(index>8 && index<=17) {
+	    						j = 1;
+	    					}
+	    					else if(index>17 && index<=26) {
+	    						j = 2;
+	    					}		
+	    					insertBlockToInventory(GLOWSTONE, index,j,glowstoneblocks);
 	    				}
 	    			}
+	    			
+	    	//CORAL BLOCKS--------------------------------------------------------------------------------------------------
 	    			else if(!coralBlockAmount.getText().equals("")) {
 	    				int coralblocks = Integer.parseInt(coralBlockAmount.getText());
 	    				if(coralblocks>64 || coralblocks<0) {
 	    					throw new InvalidInformationException("numero", coralblocks);
 	    				}
 	    				else {
+	    					String key = Block.CORAL;
+	    					Hblock<Integer,Block> value = new Hblock<Integer, Block>(coralblocks,new Block(key));
+	    					game.addToInventory(key, value);
 	    					
+	    					int index = game.getInventory().hash1(key);
+	    					int j = 0;
+	    					if(index>8 && index<=17) {
+	    						j = 1;
+	    					}
+	    					else if(index>17 && index<=26) {
+	    						j = 2;
+	    					}		
+	    					insertBlockToInventory(CORAL, index,j,coralblocks);
 	    				}
 	    			}
 	    		}
@@ -313,55 +473,115 @@
 	    }
 	//------------------------------------------------------------------------------------------------------------------------------------------
 	    @FXML
+	    /**
+	     * This method passes a determined amount of coral type blocks to the inventary
+	     * @param event the event triggered by the user
+	     */
 	    private void passCoralBlockToQuickAccess(ActionEvent event) {
-
+	    	
 	    }
 	//------------------------------------------------------------------------------------------------------------------------------------------
 	    @FXML
+	    /**
+	     * This method passes a determined amount of diamond type blocks to the inventary
+	     * @param event the event triggered by the user
+	     */
 	    private void passDiamondBlockToQuickAccess(ActionEvent event) {
 
 	    }
 	//------------------------------------------------------------------------------------------------------------------------------------------    
 	    @FXML
+	    /**
+	     * This method passes a determined amount of stone type blocks to the inventary
+	     * @param event the event triggered by the user
+	     */
 	    private void passGlowStoneBlockToQuickAccess(ActionEvent event) {
 
 	    }
 	//------------------------------------------------------------------------------------------------------------------------------------------    
 	    @FXML
+	    /**
+	     * This method passes a determined amount of gold type blocks to the inventary
+	     * @param event the event triggered by the user
+	     */
 	    private void passGoldBlockToQuickAccess(ActionEvent event) {
 
 	    }
 	//------------------------------------------------------------------------------------------------------------------------------------------
 	    @FXML
+	    /**
+	     * This method passes a determined amount of grass type blocks to the inventary
+	     * @param event the event triggered by the user
+	     */
 	    private void passGrassBlockToQuickAccess(ActionEvent event) {
 
 	    }
 	//------------------------------------------------------------------------------------------------------------------------------------------
 	    @FXML
+	    /**
+	     * This method passes a determined amount of sand type blocks to the inventary
+	     * @param event the event triggered by the user
+	     */
 	    private void passSandBlockToQuickAccess(ActionEvent event) {
 
 	    }
 	//------------------------------------------------------------------------------------------------------------------------------------------
 	    @FXML
+	    /**
+	     * This method passes a determined amount of stone type blocks to the inventary
+	     * @param event the event triggered by the user
+	     */
 	    private void passStoneBlockToQuickAccess(ActionEvent event) {
 
 	    }
 	//------------------------------------------------------------------------------------------------------------------------------------------
 	    @FXML
+	    /**
+	     * This method passes a determined amount of wooden type blocks to the inventary
+	     * @param event the event triggered by the user
+	     */
 	    private void passWoodenBlockToQuickAccess(ActionEvent event) {
 
 	    }
 	//------------------------------------------------------------------------------------------------------------------------------------------
-	    private void insertBlockToInventory(Image image, int index, int j) {
+	    /**
+	     * This methods allows to refresh the GUI and show to the user that the requested block elements were 
+	     * insert in their inventory
+	     * @param image the visual representation of the block
+	     * @param index the position where the block is stored
+	     * @param j the extra index posición for the grid 
+	     * @param blocks the number of blocks that were stored by this request
+	     */
+	    private void insertBlockToInventory(Image image, int index, int j,int blocks) {
 	  
 	    	ImageView block = new ImageView(image);
 	    	block.setFitHeight(50);
 	    	block.setFitWidth(75);
 	    	inventorybox.add(block, index, j);
+	    	inventorybox.add(new Label(""+blocks+""),index,j+1);
 	    }
 	//------------------------------------------------------------------------------------------------------------------------------------------
-	    private void insertBlockToQuickAcces() {
+	    /**
+	     * This method allows to refresh the GUI and show to the user that the requested quickacces bar
+	     * were added to their game.
+	     * @param image the visual representation of this block.
+	     * @param blocks the amount of blocks that were store by this request
+	     */
+	    private void insertBlockToQuickAcces(Image image,int blocks) {
 	    	
+	    	for(int i=0;i<2;i++) {
+	    		for(int j=0;j<7;j++) {
+	    			if(i==0) {
+	    				quickaccessbar.add(new ImageView(image),j,i);
+	    			}
+	    			else {
+	    				while(blocks>0) {
+	    					quickaccessbar.add(new Label(""+blocks+""),j,i);
+	    					blocks -= 64;
+	    				}
+	    			}
+	    		}
+	    	}	
 	    }
 //----------------------------------------------------------------------------------------------------------------------------------------------	
 }

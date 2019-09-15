@@ -33,7 +33,7 @@
 		 * <b>Pre:</b> The inventary exists
 		 * @return the hash table
 		 */
-		public Hblock<Key, Value>[] getInventary(){
+		public Hblock<Key, Value>[] getInventory(){
 			return inventory;
 		}
 	//-----------------------------------------------------------------------------------------------------------------------------------------

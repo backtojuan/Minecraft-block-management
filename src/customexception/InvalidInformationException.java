@@ -15,6 +15,12 @@
 		private int number;
 //----------------------------------------------------METHODS FOR THIS CLASS---------------------------------------------------------------
 		
+		/**
+		 * <b>InvalidInformationException Constructor</b>
+		 * This constructor allows to create exceptions to warn the user about wrong entered information
+		 * @param r the wrong expected data when adding elements
+		 * @param n the wrong expected size when adding elements
+		 */
 		public InvalidInformationException(String r,int n) {
 			report = r;
 			number = n;
@@ -23,6 +29,7 @@
  //----------------------------------------------------------------------------------------------------------------------------------------
 		/**
 		 * This method returns a personalized message for every considered exception case
+		 * <b>Pre:</b> the object that represents this exception exists and was catched by a block
 		 */
 		public String getMessage() {
 			
