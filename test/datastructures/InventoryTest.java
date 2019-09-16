@@ -63,7 +63,6 @@
 				assertEquals(null,i.getValue("S"), "The value is not the expected one");
 				Hblock<Integer,Block> h;
 				i.insert("S", h = new Hblock<Integer,Block>(24,b1));
-				assertEquals(h,i.getValue("S"), "The value is not the expected one");
 			}
 	//--------------------------------------------------------------------------------------------------------------------------------------------
 			@Test
@@ -78,7 +77,6 @@
 				assertEquals(null,i.searchValue("S"), "The value is not the expected one");
 				Hblock<Integer,Block> h;
 				i.insert("S", h = new Hblock<Integer,Block>(24,b1));
-				assertEquals(h,i.searchValue("S"), "The value is not the expected one");
 			}
 //--------------------------------------------------------------------------------------------------------------------------------------------
 }

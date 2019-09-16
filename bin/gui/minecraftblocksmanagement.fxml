@@ -67,6 +67,11 @@
                   <Insets right="-200.0" top="-25.0" />
                </GridPane.margin>
             </GridPane>
+            <Label text="(To add elements just select one block)" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="25.0" />
+               </GridPane.margin>
+            </Label>
          </children>
       </GridPane>
    </bottom>

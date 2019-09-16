@@ -45,14 +45,13 @@
 		 * @return the value for this block
 		 */
 		public Value getValue(Key key) {
-			
 			if(key == null) {
 				return null;
 			}else {
 				
 				int index = hash1(key);
 				Hblock<Key,Value> block = inventory[index];
-				
+					
 				if(block == null) {
 					return null;
 				}
