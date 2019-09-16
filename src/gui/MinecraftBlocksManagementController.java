@@ -78,7 +78,10 @@
 	     */
 	    public void initialize() {
 	    	game = new Game();
-
+	    	inventorybox.setVgap(15);
+	    	inventorybox.setHgap(15);
+	    	quickaccessbar.setVgap(15);
+	    	quickaccessbar.setHgap(15);
 	    }
 	//--------------------------------------------------------------------------------------------------------------------------------------
 	    @FXML
@@ -115,7 +118,7 @@
 	    			}
 	    	
 	    	//STONE BLOCKS--------------------------------------------------------------------------------------------------
-	    			else if(!stoneBlockAmount.getText().equals("")) {
+	    			if(!stoneBlockAmount.getText().equals("")) {
 	    				int stoneblocks = Integer.parseInt(stoneBlockAmount.getText());
 	    				if(stoneblocks>64 || stoneblocks<0) {
 	    					throw new InvalidInformationException("numero", stoneblocks);
@@ -131,7 +134,7 @@
 	    			}
 	    			
 	    	//DIAMOND BLOCKS--------------------------------------------------------------------------------------------------
-	    			else if(!diamondBlockAmount.getText().equals("")) {
+	    			if(!diamondBlockAmount.getText().equals("")) {
 	    				int diamondblocks = Integer.parseInt(diamondBlockAmount.getText());
 	    				if(diamondblocks>64 || diamondblocks<0) {
 	    					throw new InvalidInformationException("numero", diamondblocks);
@@ -147,7 +150,7 @@
 	    			}
 	    			
 	    	//WOODEN BLOCKS--------------------------------------------------------------------------------------------------
-	    			else if(!woodenBlockAmount.getText().equals("")) {
+	    			if(!woodenBlockAmount.getText().equals("")) {
 	    				int woodenblocks = Integer.parseInt(woodenBlockAmount.getText());
 	    				if(woodenblocks>64 || woodenblocks<0) {
 	    					throw new InvalidInformationException("numero", woodenblocks);
@@ -163,7 +166,7 @@
 	    			}
 	    			
 	    	//SAND BLOCKS--------------------------------------------------------------------------------------------------
-	    			else if(!sandBlockAmount.getText().equals("")) {
+	    			if(!sandBlockAmount.getText().equals("")) {
 	    				int sandblocks = Integer.parseInt(sandBlockAmount.getText());
 	    				if(sandblocks>64 || sandblocks<0) {
 	    					throw new InvalidInformationException("numero", sandblocks);
@@ -179,7 +182,7 @@
 	    			}
 	    			
 	    	//GOLD BLOCKS--------------------------------------------------------------------------------------------------
-	    			else if(!goldBlockAmount.getText().equals("")) {
+	    			if(!goldBlockAmount.getText().equals("")) {
 	    				int goldblocks = Integer.parseInt(goldBlockAmount.getText());
 	    				if(goldblocks>64 || goldblocks<0) {
 	    					throw new InvalidInformationException("numero", goldblocks);
@@ -195,7 +198,7 @@
 	    			}
 	    			
 	    	//GLOWSTONE BLOCKS--------------------------------------------------------------------------------------------------
-	    			else if(!glowStoneBlockAmount.getText().equals("")) {
+	    			if(!glowStoneBlockAmount.getText().equals("")) {
 	    				int glowstoneblocks = Integer.parseInt(glowStoneBlockAmount.getText());
 	    				if(glowstoneblocks>64 || glowstoneblocks<0) {
 	    					throw new InvalidInformationException("numero", glowstoneblocks);
@@ -211,7 +214,7 @@
 	    			}
 	    	
 	    	//CORAL BLOCKS--------------------------------------------------------------------------------------------------
-	    			else if(!coralBlockAmount.getText().equals("")) {
+	    			if(!coralBlockAmount.getText().equals("")) {
 	    				int coralblocks = Integer.parseInt(coralBlockAmount.getText());
 	    				if(coralblocks>64 || coralblocks<0) {
 	    					throw new InvalidInformationException("numero", coralblocks);
@@ -274,6 +277,7 @@
 	    				else {
 	    					
 	    					String key = Block.GRASS;
+	    						    					
 	    					Hblock<Integer,Block> value = new Hblock<Integer, Block>(grassblocks,new Block(key));
 	    					game.addToInventory(key, value);
 	    					
@@ -284,13 +288,14 @@
 	    					}
 	    					else if(index>17 && index<=26) {
 	    						j = 2;
-	    					}		
+	    					}
+
 	    					insertBlockToInventory(GRASS, index,j,grassblocks);
 	    				}
 	    			}
 	    	
 	    	//STONE BLOCKS-----------------------------------------------------------------------------------------------
-	    			else if(!stoneBlockAmount.getText().equals("")) {
+	    			if(!stoneBlockAmount.getText().equals("")) {
 	    				int stoneblocks = Integer.parseInt(stoneBlockAmount.getText());
 	    				if(stoneblocks>64 || stoneblocks<0) {
 	    					throw new InvalidInformationException("numero", stoneblocks);
@@ -308,13 +313,14 @@
 	    					}
 	    					else if(index>17 && index<=26) {
 	    						j = 2;
-	    					}		
+	    					}	
+	    				
 	    					insertBlockToInventory(STONE, index,j,stoneblocks);
 	    				}
 	    			}
 	    			
 	    	//DIAMOND BLOCKS-----------------------------------------------------------------------------------------------
-	    			else if(!diamondBlockAmount.getText().equals("")) {
+	    			if(!diamondBlockAmount.getText().equals("")) {
 	    				int diamondblocks = Integer.parseInt(diamondBlockAmount.getText());
 	    				if(diamondblocks>64 || diamondblocks<0) {
 	    					throw new InvalidInformationException("numero", diamondblocks);
@@ -332,12 +338,13 @@
 	    					else if(index>17 && index<=26) {
 	    						j = 2;
 	    					}		
+	    					
 	    					insertBlockToInventory(DIAMOND, index,j,diamondblocks);
 	    				}
 	    			}
 	    			
 	    	//WOODEN BLOCKS------------------------------------------------------------------------------------------------
-	    			else if(!woodenBlockAmount.getText().equals("")) {
+	    			if(!woodenBlockAmount.getText().equals("")) {
 	    				int woodenblocks = Integer.parseInt(woodenBlockAmount.getText());
 	    				if(woodenblocks>64 || woodenblocks<0) {
 	    					throw new InvalidInformationException("numero", woodenblocks);
@@ -355,12 +362,13 @@
 	    					else if(index>17 && index<=26) {
 	    						j = 2;
 	    					}		
+	    					
 	    					insertBlockToInventory(WOODEN, index,j,woodenblocks);
 	    				}
 	    			}
 	    	
 	    	//SAND BLOCKS---------------------------------------------------------------------------------------------------
-	    			else if(!sandBlockAmount.getText().equals("")) {
+	    			if(!sandBlockAmount.getText().equals("")) {
 	    				int sandblocks = Integer.parseInt(sandBlockAmount.getText());
 	    				if(sandblocks>64 || sandblocks<0) {
 	    					throw new InvalidInformationException("numero", sandblocks);
@@ -378,12 +386,13 @@
 	    					else if(index>17 && index<=26) {
 	    						j = 2;
 	    					}		
+
 	    					insertBlockToInventory(SAND, index,j,sandblocks);
 	    				}
 	    			}
 	    	
 	    	//GOLD BLOCKS---------------------------------------------------------------------------------------------------
-	    			else if(!goldBlockAmount.getText().equals("")) {
+	    			if(!goldBlockAmount.getText().equals("")) {
 	    				int goldblocks = Integer.parseInt(goldBlockAmount.getText());
 	    				if(goldblocks>64 || goldblocks<0) {
 	    					throw new InvalidInformationException("numero", goldblocks);
@@ -401,12 +410,13 @@
 	    					else if(index>17 && index<=26) {
 	    						j = 2;
 	    					}		
+
 	    					insertBlockToInventory(GOLD, index,j,goldblocks);
 	    				}
 	    			}
 	    			
 	    	//GLOWSTONE BLOCKS---------------------------------------------------------------------------------------------------
-	    			else if(!glowStoneBlockAmount.getText().equals("")) {
+	    			if(!glowStoneBlockAmount.getText().equals("")) {
 	    				int glowstoneblocks = Integer.parseInt(glowStoneBlockAmount.getText());
 	    				if(glowstoneblocks>64 || glowstoneblocks<0) {
 	    					throw new InvalidInformationException("numero", glowstoneblocks);
@@ -424,12 +434,13 @@
 	    					else if(index>17 && index<=26) {
 	    						j = 2;
 	    					}		
+
 	    					insertBlockToInventory(GLOWSTONE, index,j,glowstoneblocks);
 	    				}
 	    			}
 	    			
 	    	//CORAL BLOCKS--------------------------------------------------------------------------------------------------
-	    			else if(!coralBlockAmount.getText().equals("")) {
+	    			if(!coralBlockAmount.getText().equals("")) {
 	    				int coralblocks = Integer.parseInt(coralBlockAmount.getText());
 	    				if(coralblocks>64 || coralblocks<0) {
 	    					throw new InvalidInformationException("numero", coralblocks);
@@ -446,7 +457,8 @@
 	    					}
 	    					else if(index>17 && index<=26) {
 	    						j = 2;
-	    					}		
+	    					}	
+
 	    					insertBlockToInventory(CORAL, index,j,coralblocks);
 	    				}
 	    			}
@@ -552,14 +564,18 @@
 	     * @param j the extra index posición for the grid 
 	     * @param blocks the number of blocks that were stored by this request
 	     */
-	    private void insertBlockToInventory(Image image, int index, int j,int blocks) {
+		private void insertBlockToInventory(Image image, int index, int j,int blocks) {
 	  
 	    	ImageView block = new ImageView(image);
 	    	block.setFitHeight(50);
 	    	block.setFitWidth(75);
 	    	inventorybox.add(block, index, j);
-	    	inventorybox.add(new Label(""+blocks+""),index,j+1);
+	    	Label b = new Label(""+blocks+"");
+	    	
+	    	inventorybox.add(b,index,j+1);
+	    	
 	    }
+	 //-----------------------------------------------------------------------------------------------------------------------------------------
 	//------------------------------------------------------------------------------------------------------------------------------------------
 	    /**
 	     * This method allows to refresh the GUI and show to the user that the requested quickacces bar
@@ -572,7 +588,10 @@
 	    	for(int i=0;i<2;i++) {
 	    		for(int j=0;j<7;j++) {
 	    			if(i==0) {
-	    				quickaccessbar.add(new ImageView(image),j,i);
+	    		    	ImageView block = new ImageView(image);
+	    		    	block.setFitHeight(50);
+	    		    	block.setFitWidth(75);
+	    				quickaccessbar.add(block,j,i);
 	    			}
 	    			else {
 	    				while(blocks>0) {

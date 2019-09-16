@@ -3,9 +3,11 @@
 //----------------------------------------------------------------------------------------------------------------------------------------------
 	import static org.junit.Assert.assertTrue;
 	import static org.junit.jupiter.api.Assertions.*;
-	
-	import java.util.PriorityQueue;
-	import java.util.Stack;
+
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Stack;
 	
 	import org.junit.jupiter.api.Test;
 	
@@ -27,7 +29,7 @@
 		}
 		
 		private void setupScenary2() {
-			PriorityQueue<Stack<Stack<Block>>> queueAccess = new PriorityQueue<>();
+			Queue<Stack<Stack<Block>>> queueAccess = new LinkedList<>();
 			Stack<Stack<Block>> stackOfStack = new Stack<>();
 			Stack<Block> stackOfElements = new Stack<>();
 			quickAccess = new QuickAccess<>(queueAccess,stackOfStack,stackOfElements);
@@ -40,7 +42,7 @@
 		 */
 		public void TestQuickAccess() {
 			setupScenary1();
-			PriorityQueue<Stack<Stack<Block>>> queueAccess = new PriorityQueue<>();
+			Queue<Stack<Stack<Block>>> queueAccess = new LinkedList<>();
 			Stack<Stack<Block>> stackOfStack = new Stack<>();
 			Stack<Block> stackOfElements = new Stack<>();
 			quickAccess = new QuickAccess<>(queueAccess,stackOfStack,stackOfElements);

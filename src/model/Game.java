@@ -25,7 +25,7 @@
 
 		public Game() {
 			inventory = new Inventory<>();
-			quickAccess = new QuickAccess<Block>(new PriorityQueue<Stack<Stack<Block>>>(), new Stack<Stack<Block>>(), new Stack<Block>());
+			quickAccess = new QuickAccess<Block>(new LinkedList<>(), new Stack<Stack<Block>>(), new Stack<Block>());
 		}
 	//--------------------------------------------------------------------------------------------------------------------------------------	
 		public Inventory<String, Hblock<Integer, Block>> getInventory(){

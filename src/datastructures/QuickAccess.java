@@ -2,7 +2,7 @@
 	package datastructures;
 //-----------------------------------------------------------------------------------------------------------------------------------------
 	import java.util.Stack;
-	import java.util.PriorityQueue;
+	import java.util.Queue;
 //-----------------------------------------------------------------------------------------------------------------------------------------	
 	/**
 	 * 
@@ -18,7 +18,7 @@
 		
 		public final static int SIZE = 7;
 		
-		private PriorityQueue<Stack<Stack<E>>> QueueAccess;
+		private Queue<Stack<Stack<E>>> QueueAccess;
 		private Stack<Stack<E>> stackOfStack;
 		private Stack<E> stackOfElements;
 		
@@ -29,7 +29,7 @@
 		 * @param sts the first quick acces bar that the user wants to create
 		 * @param st the amount of block elements that are going to be store.
 		 */
-		public QuickAccess(PriorityQueue<Stack<Stack<E>>> pq, Stack<Stack<E>> sts, Stack<E> st) {
+		public QuickAccess(Queue<Stack<Stack<E>>> pq, Stack<Stack<E>> sts, Stack<E> st) {
 			QueueAccess = pq;
 			stackOfStack = sts;
 			stackOfElements = st;
@@ -43,7 +43,7 @@
 		 * <b>Pre:</b> the QuickAccess exists
 		 * @return the structure that stores the quick access bars
 		 */
-		public PriorityQueue<Stack<Stack<E>>> getQueue(){
+		public Queue<Stack<Stack<E>>> getQueue(){
 			return QueueAccess;
 		}
 	//------------------------------------------------------------------------------------------------------------------------------------------

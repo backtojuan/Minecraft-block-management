@@ -57,7 +57,7 @@
 					return null;
 				}
 				else {
-					while(block!=null) {
+					while(block.getNext()!=null) {
 						if(block.getKey().equals(key)) {
 							return block.getValue();
 						}
@@ -100,7 +100,7 @@
 				inventory[index] = new Hblock<>(key, value);
 			}
 			else {
-				while(block!=null) {
+				while(block.getNext()!=null) {
 					if(block.getKey().equals(key)) {
 						block.setNext(new Hblock<>(key,value));
 					}
